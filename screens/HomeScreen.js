@@ -1,8 +1,9 @@
 import React, { useLayoutEffect } from 'react';
-import { Text, SafeAreaView, View, Image, TextInput } from 'react-native';
+import { Text, SafeAreaView, View, Image, TextInput, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import { AdjustmentsVerticalIcon, ChevronDownIcon, UserIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import GlobalStyles from '../utils/GlobalStyles';
+import Categories from '../components/Categories';
 
 const HomeScreen = () => {
     const navigation = useNavigation();
@@ -15,7 +16,7 @@ const HomeScreen = () => {
 
     return (
         <SafeAreaView style={GlobalStyles.androidSafeArea}>
-            <View className="flex-row pb-3 items-center mx-4 space-x-2 px-4">
+            <View className="flex-row pb-3 items-center mx-4 space-x-2">
                 <Image className="w-7 h-7 p-4 bg-gray-300 rounded-full" source={{ uri: "https://links.papareact.com/wru" }} />
                 <View className="flex-1">
                     <Text className="font-bold text-gray-400 text-xs">Deliver Now!</Text>
@@ -28,7 +29,7 @@ const HomeScreen = () => {
                 <UserIcon size={35} color="#00CCBB" />
             </View>
 
-            <View className="flex-row items-center space-x-2 pb-2 mx-4 px-4">
+            <View className="flex-row items-center space-x-2 pb-2 mx-4">
                 <View className="flex-row flex-1 space-x-2 bg-gray-200 p-3">
                     <MagnifyingGlassIcon color="gray" size={20} />
                     <TextInput placeholder='Resturant and cuisines' keyboardAppearance='default' />
@@ -36,6 +37,10 @@ const HomeScreen = () => {
 
                 <AdjustmentsVerticalIcon color="#00CCBB" />
             </View>
+
+            <ScrollView>
+                <Categories />
+            </ScrollView>
         </SafeAreaView>
     );
 }
