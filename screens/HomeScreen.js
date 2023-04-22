@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import { AdjustmentsVerticalIcon, ChevronDownIcon, UserIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import GlobalStyles from '../utils/GlobalStyles';
 import Categories from '../components/Categories';
+import FeaturedRow from '../components/FeaturedRow';
 
 const HomeScreen = () => {
     const navigation = useNavigation();
@@ -15,7 +16,7 @@ const HomeScreen = () => {
     }, [])
 
     return (
-        <SafeAreaView style={GlobalStyles.androidSafeArea}>
+        <SafeAreaView style={GlobalStyles.androidSafeArea} className="bg-gray-100 pt-5">
             <View className="flex-row pb-3 items-center mx-4 space-x-2">
                 <Image className="w-7 h-7 p-4 bg-gray-300 rounded-full" source={{ uri: "https://links.papareact.com/wru" }} />
                 <View className="flex-1">
@@ -40,6 +41,26 @@ const HomeScreen = () => {
 
             <ScrollView>
                 <Categories />
+                <FeaturedRow
+                    id="1"
+                    title="Featured"
+                    description="Paid placements from out partners"
+                />
+                <FeaturedRow
+                    id="2"
+                    title="Featured"
+                    description="Paid placements from out partners"
+                />
+                <FeaturedRow
+                    id="3"
+                    title="Featured"
+                    description="Paid placements from out partners"
+                />
+                <FeaturedRow
+                    id="4"
+                    title="Featured"
+                    description="Paid placements from out partners"
+                />
             </ScrollView>
         </SafeAreaView>
     );
